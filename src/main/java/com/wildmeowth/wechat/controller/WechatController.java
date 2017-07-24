@@ -42,10 +42,11 @@ public class WechatController {
         request.setCharacterEncoding("UTF-8");  //微信服务器POST消息时用的是UTF-8编码，在接收时也要用同样的编码，否则中文会乱码；
         response.setCharacterEncoding("UTF-8"); //在响应消息（回复消息给用户）时，也将编码方式设置为UTF-8，原理同上；
         boolean isGet = request.getMethod().toLowerCase().equals("get"); 
-      
+        System.out.println(request.getMethod());
         PrintWriter out = response.getWriter();
         
         try {
+        	
             if (isGet) {
                 String signature = request.getParameter("signature");// 微信加密签名  
                 String timestamp = request.getParameter("timestamp");// 时间戳  
