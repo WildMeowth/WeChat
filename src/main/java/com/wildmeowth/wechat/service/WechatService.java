@@ -5,6 +5,8 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.wildmeowth.wechat.entity.TextMessage;
@@ -19,6 +21,9 @@ public class WechatService {
      * @param request
      * @return
      */
+	
+	private static final Logger logger = LoggerFactory.getLogger(WechatService.class);
+	
     public String weixinPost(HttpServletRequest request) {
         String respMessage = null;
         try {
@@ -35,7 +40,7 @@ public class WechatService {
             // 消息内容
             String content = requestMap.get("Content");
             
-//            LOGGER.info("FromUserName is:" + fromUserName + ", ToUserName is:" + toUserName + ", MsgType is:" + msgType);
+            logger.info("FromUserName is:" + fromUserName + ", ToUserName is:" + toUserName + ", MsgType is:" + msgType);
 
             // 文本消息
             if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_TEXT)) {
@@ -124,7 +129,7 @@ public class WechatService {
             }
         }
         catch (Exception e) {
-//            Logger.error("error......");
+            logger.error("error......");
         }
         return respMessage;
     }
