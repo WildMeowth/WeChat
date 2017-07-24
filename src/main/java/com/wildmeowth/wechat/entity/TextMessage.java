@@ -1,4 +1,4 @@
-package com.wildmeowth.wechat.util;
+package com.wildmeowth.wechat.entity;
 
 
 public class TextMessage {

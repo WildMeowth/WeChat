@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Service;
 
+import com.wildmeowth.wechat.entity.TextMessage;
 import com.wildmeowth.wechat.util.MessageUtil;
-import com.wildmeowth.wechat.util.TextMessage;
 
 @Service("wechatService")
 public class WechatService {

@@ -14,6 +14,7 @@ import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 import com.thoughtworks.xstream.XStream;
+import com.wildmeowth.wechat.entity.TextMessage;
 
 public class MessageUtil {
     
